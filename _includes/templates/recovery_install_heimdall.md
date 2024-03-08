@@ -74,7 +74,10 @@ heimdall flash --{{ device.recovery_partition_name | upcase }} {{ device.recover
 4. A transfer bar will appear on the device showing the recovery image being flashed.
     {% include alerts/note.html content="The device will continue to display `Downloading... Do not turn off target!!` even after the process is complete." %}
 5. Unplug the USB cable from your device.
-6. Manually reboot into recovery, this may require pulling the device's battery out and putting it back in, or if you have a non-removable battery, press the Volume Down + Power buttons for 8~10 seconds until the screen turns black & release the buttons *immediately* when it does, then boot to recovery:
+6. Turn off the device. There are different ways to achive that depending on your device:
+   * If you can remove the device's battery, pull the battery out and put it back in
+   * If you have a non-removable battery, press the Volume Down + Power buttons for 8~10 seconds until the screen turns black & release the buttons *immediately* when it does. On some devices, this triggers a reboot instead of just turning off the device, so you will need to go back to the step 2 on this page, and, once back to the present step, try to press Volume Down + Bixby + Power instead.
+7. Then boot to recovery:
     * {{ device.recovery_boot }}
     {% include alerts/note.html content="Be sure to reboot into recovery immediately after installing the custom recovery. If you don't the stock ROM will overwrite the custom recovery with the stock recovery, and you'll need to flash it again." %}
 {%- include snippets/recovery_logo_note.md %}
